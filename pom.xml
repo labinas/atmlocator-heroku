@@ -114,6 +114,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>atmlocator</finalName>
     </build>
 
 </project>

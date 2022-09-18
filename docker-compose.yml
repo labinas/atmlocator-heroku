@@ -11,6 +11,17 @@ services:
     - postgres-data:/var/lib/postgresql/data
     ports:
     - 5454:5432
+  atmlocator:
+    depends_on:
+      - database
+    image: atmlocator.jar
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/atmlocator
+    ports:
+      - "8080:8080"
 
 volumes:
   postgres-data:
